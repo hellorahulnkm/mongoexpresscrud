@@ -1,0 +1,28 @@
+<a href="/post/view_post">View Post</a>
+
+
+<form action="/post/EditPostDetail" method="post" enctype="multipart/form-data">
+    <table border="1">
+        <input type="text" value="<%= sPost.id %>" name="postId">
+        <tr>
+            <td>Title</td>
+            <td><input type="text" name="title" value="<%= sPost.title %>"></td>
+        </tr>
+
+        <tr>
+            <td>Content</td>
+            <td><input type="text" name="content" value="<%= sPost.title %>"></td>
+        </tr>
+
+        <tr>
+            <td>Image</td>
+            <td><input type="file" name="postImg">
+            <img src="<%= sPost.postImg %>" height="100"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Edit Post"></td> 
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,63 @@
+<form action="/updateStudentDetail" method="post" enctype="multipart/form-data">
+    <table border="1">
+        <input type="hidden" name="EditId" value="<%= ob.id %>">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" value="<%= ob.name %>"></td>
+        </tr>
+
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" name="age" value="<%= ob.age %>"></td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" value="male" name="gender" <%if(ob.gender=='male'){%> <%= 'checked' %> <%}%> />male
+                <input type="radio" value="female" name="gender" <%if(ob.gender=='female'){%> <%= 'checked' %> <%}%> />female
+            </td>
+        </tr>
+
+        <tr>
+            <td>Hobby</td>
+            <td>
+                <input type="checkbox" value="reading" name="hobby" <%if(ob.hobby.includes('reading')){%> <%='checked'%> <%}%> >Reading
+                <input type="checkbox" value="dancing" name="hobby" <%if(ob.hobby.includes('dancing')){%> <%='checked'%> <%}%>>Dancing
+                <input type="checkbox" value="gaming" name="hobby" <%if(ob.hobby.includes('gaming')){%> <%='checked'%> <%}%>>Gaming
+            </td>
+        </tr>
+
+        <%var citylist = ["surat","vadodra","bharuch","godhra"]%>
+        <tr>
+            <td>City</td>
+            <td>
+                <select name="city">
+                    <option value="">-- select city --</option>
+                    <% citylist.map((v)=>{ %>
+                        <option value="<%= v %>" <%if(ob.city==v){ %> <%= 'selected'%> <%}%> > <%= v %> </option>
+                    <%})%>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>msg</td>
+            <td><input type="te"></td>
+        </tr>
+
+        <tr>
+            <td>Upload Image</td>
+            <td>
+                <input type="file" name="myImg"/>
+                <img src="<%= ob.myImg %>" height="100" alt="">
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Edit Data"></td>
+        </tr>
+
+    </table>
+</form>

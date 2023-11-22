@@ -1,0 +1,56 @@
+<a href="/view_details">View Details</a>
+
+<form action="/addStudentDetail" method="post" enctype="multipart/form-data">
+    <table border="1">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" name="age"></td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" value="male" name="gender">male
+                <input type="radio" value="female" name="gender">female
+            </td>
+        </tr>
+
+        <tr>
+            <td>Hobby</td>
+            <td>
+                <input type="checkbox" value="reading" name="hobby">Reading
+                <input type="checkbox" value="dancing" name="hobby">Dancing
+                <input type="checkbox" value="gaming" name="hobby">Gaming
+            </td>
+        </tr>
+
+        <%var citylist = ["surat","vadodra","bharuch","godhra"]%>
+        <tr>
+            <td>City</td>
+            <td>
+                <select name="city">
+                    <option value="">-- select city --</option>
+                    <% citylist.map((v)=>{ %>
+                        <option value="<%= v %>"> <%= v %> </option>
+                    <%})%>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Upload Image</td>
+            <td><input type="file" name="myImg"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add Data"></td>
+        </tr>
+
+    </table>
+</form>

@@ -1,0 +1,25 @@
+<a href="/">Add Details</a>
+
+<table border="1">
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Gender</td>
+        <td>Hobby</td>
+        <td>City</td>
+        <td>Image</td>
+        <td>Actions</td>
+    </tr>
+    <% for(var ob of st){ %>
+        <tr>
+            <td><%= ob.name %></td>
+            <td><%= ob.age %></td>
+            <td><%= ob.gender %></td>
+            <td><%= ob.hobby %></td>
+            <td><%= ob.city %></td>
+            <td><img src="<%= ob.myImg %>" height="100" alt=""></td>
+            <td><a href="/deleteStu/<%=ob.id%>">Delet</a> ||
+            <a href="/updateStu/<%=ob.id%>">Update</a></td>
+        </tr>
+    <% } %>
+</table>

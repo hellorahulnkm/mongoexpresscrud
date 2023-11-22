@@ -1,0 +1,19 @@
+<a href="/post">Add Post</a>
+
+<table border="1">
+    <tr>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Image</td>
+        <td>Actions</td>
+    </tr>
+    <% for(var po of postob){ %>
+        <tr>
+            <td><%= po.title %></td>
+            <td><%= po.content %></td>
+            <td><img src="<%= po.postImg %>" height="100"> </td>
+            <td><a href="/post/DeletePost/<%= po.id %>">Delet</a> ||
+            <a href="/post/UpdatePost/<%= po.id %>">Update</a></td>
+        </tr>
+    <% } %>
+</table>
